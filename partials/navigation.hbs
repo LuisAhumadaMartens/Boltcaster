@@ -1,13 +1,14 @@
 {{#if isSecondary}}
-    <ul class="flex flex-row  justify-center" >
-        {{#foreach navigation}}
-            <li class="block text-center text-[0.70rem] text-white p-2 mx-2 nav-{{slug}}"><a href="{{url}}" >{{slug}}</a></li>
-        {{/foreach}}
-    </ul>
+    {{#foreach navigation}}
+        <a class="btn btn-secondary btn-icon btn-sm btn-{{slug}} rounded-circle ms-3" href="{{url absolute="true"}}"><i class="ai-{{slug}}"></i></a> <!--- Cambiar al nuevo -->
+    {{/foreach}}
 {{else}}
-        <ul class="flex flex-row justify-center" >
+    {{#if isHeader}}
         {{#foreach navigation}}
-            <li class="block text-center text-[0.70rem] text-white p-2 mx-2 nav-{{slug}}"><a href="{{url}}" >{{slug}}</a></li>
+            <li class="nav-item"><a href="{{url absolute="true"}}" class="nav-link {{#if current}} active{{/if}}">{{label}}</a></li>
         {{/foreach}}
-    </ul>
+    {{/if}}
+    {{#foreach navigation}}
+        <a class="nav-link fw-normal py-0 px-3 {{#if current}} active{{/if}}" href="{{url absolute="true"}}">{{label}}</a> <!--- Cambiar al nuevo -->
+    {{/foreach}}
 {{/if}}

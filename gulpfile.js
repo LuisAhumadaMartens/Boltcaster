@@ -101,7 +101,6 @@ function zipper(done) {
 
 function clean() {
     return del([
-        path.css,
         path.js + '/theme.min.js',
         path.vendor,
     ]);

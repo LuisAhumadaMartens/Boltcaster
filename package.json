@@ -48,7 +48,60 @@
 			}
 		},
 		"posts_per_page": 10,
-		"card_assets": true
+		"card_assets": true,
+		"custom": {
+			"background_color": {
+				"type": "color",
+				"default": "#191919"
+			},
+			"body_color": {
+				"type": "color",
+				"default": "#FDFDFD"
+			},
+			"heading_color": {
+				"type": "color",
+				"default": "#121519"
+			},
+			"second_accent_color": {
+				"type": "color",
+				"default": "#E90C64"
+			},
+			"body_font": {
+				"type": "select",
+				"options": [
+					"Modern sans-serif",
+					"Elegant serif"
+				],
+				"default": "Modern sans-serif"
+			},
+			"title_font": {
+				"type": "select",
+				"options": [
+					"Modern sans-serif",
+					"Elegant serif"
+				],
+				"default": "Modern sans-serif"
+			},
+			"first_navigation_tag": {
+				"type": "text",
+				"default": "projects"
+			},
+			"main_title_home": {
+				"type": "text",
+				"default": "Hello world!",
+				"group": "homepage"
+			},
+			"subtitle_home": {
+				"type": "text",
+				"default": "Mattis aliquet faucibus senectus feugiat sapien mi diam nibh velit nunc purus elementum faucibus lectuset mauris.",
+				"group": "homepage"
+			},
+			"top_subtitle_home": {
+				"type": "text",
+				"default": "Lorem Ipsum.",
+				"group": "homepage"
+			}
+		}
 	},
 	"devDependencies": {
 		"@babel/core": "^7.21.0",
