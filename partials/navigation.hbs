@@ -1,14 +1,16 @@
 {{#if isSecondary}}
     {{#foreach navigation}}
-        <a class="btn btn-secondary btn-icon btn-sm btn-{{slug}} rounded-circle ms-3" href="{{url absolute="true"}}"><i class="ai-{{slug}}"></i></a> <!--- Cambiar al nuevo -->
+        <a href="{{url absolute="true"}}" class="btn btn-icon btn-secondary btn-{{slug}} mx-2"> <!--- Footer Icons -->
+            <i class="bx bxl-{{slug}}"></i>
+        </a>
     {{/foreach}}
 {{else}}
     {{#if isHeader}}
         {{#foreach navigation}}
-            <li class="nav-item"><a href="{{url absolute="true"}}" class="nav-link {{#if current}} active{{/if}}">{{label}}</a></li>
+            <li class="nav-item"><a href="{{url absolute="true"}}" class="nav-link {{#if current}} active{{/if}}">{{label}}</a></li> <!--- Header -->
         {{/foreach}}
     {{/if}}
     {{#foreach navigation}}
-        <a class="nav-link fw-normal py-0 px-3 {{#if current}} active{{/if}}" href="{{url absolute="true"}}">{{label}}</a> <!--- Cambiar al nuevo -->
+        <li class="nav-item"><a href="{{url absolute="true"}}" class="nav-link {{#if current}} active{{/if}}">{{label}}</a></li> <!--- Footer -->
     {{/foreach}}
 {{/if}}
