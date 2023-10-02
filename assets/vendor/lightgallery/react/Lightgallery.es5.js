@@ -28,7 +28,7 @@ function __rest(s, e) {
 }
 
 /*!
- * lightgallery | 2.7.2 | September 20th 2023
+ * lightgallery | 2.7.1 | January 11th 2023
  * http://www.lightgalleryjs.com/
  * Copyright (c) 2020 Sachin Neravath;
  * @license GPLv3
@@ -178,7 +178,6 @@ var lightGalleryCoreSettings = {
         nextSlide: 'Next slide',
         download: 'Download',
         playVideo: 'Play video',
-        mediaLoadingFailed: 'Oops... Failed to load content...',
     },
 };
 
@@ -1586,9 +1585,7 @@ var LightGallery = /** @class */ (function () {
             _this.triggerSlideItemLoad(currentSlide, index, delay, speed, isFirstSlide);
         }, function () {
             currentSlide.addClass('lg-complete lg-complete_');
-            currentSlide.html('<span class="lg-error-msg">' +
-                _this.settings.strings['mediaLoadingFailed'] +
-                '</span>');
+            currentSlide.html('<span class="lg-error-msg">Oops... Failed to load content...</span>');
         });
     };
     LightGallery.prototype.triggerSlideItemLoad = function ($currentSlide, index, delay, speed, isFirstSlide) {

@@ -17,11 +17,6 @@ export interface ZoomSettings {
      */
     zoom: boolean;
     /**
-     * Enable/Disable infinite zoom
-     * @description If you set this to true, you can zoom in more than the original size of the image.
-     */
-    infiniteZoom: boolean;
-    /**
      * Enable actual size icon.
      */
     actualSize: boolean;

@@ -4,7 +4,6 @@ exports.zoomSettings = void 0;
 exports.zoomSettings = {
     scale: 1,
     zoom: true,
-    infiniteZoom: true,
     actualSize: true,
     showZoomInOutIcons: false,
     actualSizeIcons: {

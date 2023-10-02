@@ -755,9 +755,7 @@ var LightGallery = /** @class */ (function () {
             _this.triggerSlideItemLoad(currentSlide, index, delay, speed, isFirstSlide);
         }, function () {
             currentSlide.addClass('lg-complete lg-complete_');
-            currentSlide.html('<span class="lg-error-msg">' +
-                _this.settings.strings['mediaLoadingFailed'] +
-                '</span>');
+            currentSlide.html('<span class="lg-error-msg">Oops... Failed to load content...</span>');
         });
     };
     LightGallery.prototype.triggerSlideItemLoad = function ($currentSlide, index, delay, speed, isFirstSlide) {

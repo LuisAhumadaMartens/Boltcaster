@@ -1823,25 +1823,6 @@ module.exports = {
 
 /***/ }),
 
-/***/ "6b0d":
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-// runtime helper for setting properties on components
-// in a tree-shakable way
-exports.default = (sfc, props) => {
-    const target = sfc.__vccOpts || sfc;
-    for (const [key, val] of props) {
-        target[key] = val;
-    }
-    return target;
-};
-
-
-/***/ }),
-
 /***/ "6eeb":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1899,6 +1880,8 @@ __webpack_require__("e01a");
 __webpack_require__("d3b7");
 
 __webpack_require__("d28b");
+
+__webpack_require__("e260");
 
 __webpack_require__("3ca3");
 
@@ -4867,16 +4850,16 @@ if (typeof window !== 'undefined') {
 // EXTERNAL MODULE: external {"commonjs":"vue","commonjs2":"vue","root":"Vue"}
 var external_commonjs_vue_commonjs2_vue_root_Vue_ = __webpack_require__("8bbf");
 
-// CONCATENATED MODULE: ./node_modules/babel-loader/lib!./node_modules/ts-loader??ref--14-1!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--7!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/LightGallery.vue?vue&type=template&id=47173610&ts=true
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/@vue/cli-service/node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/@vue/cli-service/node_modules/vue-loader-v16/dist??ref--0-1!./src/components/LightGallery.vue?vue&type=template&id=47173610
 
 var _hoisted_1 = {
   ref: "container",
   class: "lightgallery-vue"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("div", _hoisted_1, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderSlot"])(_ctx.$slots, "default")], 512);
+  return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])("div", _hoisted_1, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderSlot"])(_ctx.$slots, "default")], 512);
 }
-// CONCATENATED MODULE: ./src/components/LightGallery.vue?vue&type=template&id=47173610&ts=true
+// CONCATENATED MODULE: ./src/components/LightGallery.vue?vue&type=template&id=47173610
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.object.keys.js
 var es_object_keys = __webpack_require__("b64b");
@@ -5932,8 +5915,7 @@ var lightGalleryCoreSettings = {
     previousSlide: 'Previous slide',
     nextSlide: 'Next slide',
     download: 'Download',
-    playVideo: 'Play video',
-    mediaLoadingFailed: 'Oops... Failed to load content...'
+    playVideo: 'Play video'
   }
 };
 // CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/arrayLikeToArray.js
@@ -5960,6 +5942,9 @@ var es_object_to_string = __webpack_require__("d3b7");
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.symbol.iterator.js
 var es_symbol_iterator = __webpack_require__("d28b");
 
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es.array.iterator.js
+var es_array_iterator = __webpack_require__("e260");
+
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.string.iterator.js
 var es_string_iterator = __webpack_require__("3ca3");
 
@@ -5970,6 +5955,7 @@ var web_dom_collections_iterator = __webpack_require__("ddb0");
 var es_array_from = __webpack_require__("a630");
 
 // CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/iterableToArray.js
+
 
 
 
@@ -7656,7 +7642,7 @@ var lightgallery_LightGallery = /*#__PURE__*/function () {
         _this7.triggerSlideItemLoad(currentSlide, index, delay, speed, isFirstSlide);
       }, function () {
         currentSlide.addClass('lg-complete lg-complete_');
-        currentSlide.html('<span class="lg-error-msg">' + _this7.settings.strings['mediaLoadingFailed'] + '</span>');
+        currentSlide.html('<span class="lg-error-msg">Oops... Failed to load content...</span>');
       });
     }
   }, {
@@ -8988,7 +8974,7 @@ function lightGallery(el, options) {
 }
 
 /* harmony default export */ var src_0 = (lightGallery);
-// CONCATENATED MODULE: ./node_modules/babel-loader/lib!./node_modules/ts-loader??ref--14-1!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/LightGallery.vue?vue&type=script&lang=ts
+// CONCATENATED MODULE: ./node_modules/babel-loader/lib!./node_modules/ts-loader??ref--14-1!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/@vue/cli-service/node_modules/vue-loader-v16/dist??ref--0-1!./src/components/LightGallery.vue?vue&type=script&lang=ts
 
 
 
@@ -9130,19 +9116,13 @@ LightGalleryvue_type_script_lang_ts_Lightgallery = __decorate([Options({
 /* harmony default export */ var LightGalleryvue_type_script_lang_ts = (LightGalleryvue_type_script_lang_ts_Lightgallery);
 // CONCATENATED MODULE: ./src/components/LightGallery.vue?vue&type=script&lang=ts
  
-// EXTERNAL MODULE: ./node_modules/vue-loader-v16/dist/exportHelper.js
-var exportHelper = __webpack_require__("6b0d");
-var exportHelper_default = /*#__PURE__*/__webpack_require__.n(exportHelper);
-
 // CONCATENATED MODULE: ./src/components/LightGallery.vue
 
 
 
+LightGalleryvue_type_script_lang_ts.render = render
 
-
-const __exports__ = /*#__PURE__*/exportHelper_default()(LightGalleryvue_type_script_lang_ts, [['render',render]])
-
-/* harmony default export */ var components_LightGallery = (__exports__);
+/* harmony default export */ var components_LightGallery = (LightGalleryvue_type_script_lang_ts);
 // CONCATENATED MODULE: ./node_modules/@vue/cli-service/lib/commands/build/entry-lib.js
 
 

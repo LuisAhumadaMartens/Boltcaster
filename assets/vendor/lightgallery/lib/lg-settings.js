@@ -77,7 +77,6 @@ exports.lightGalleryCoreSettings = {
         nextSlide: 'Next slide',
         download: 'Download',
         playVideo: 'Play video',
-        mediaLoadingFailed: 'Oops... Failed to load content...',
     },
 };
 //# sourceMappingURL=lg-settings.js.map

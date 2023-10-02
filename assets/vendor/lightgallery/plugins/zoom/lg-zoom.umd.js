@@ -1,5 +1,5 @@
 /*!
- * lightgallery | 2.7.2 | September 20th 2023
+ * lightgallery | 2.7.1 | January 11th 2023
  * http://www.lightgalleryjs.com/
  * Copyright (c) 2020 Sachin Neravath;
  * @license GPLv3
@@ -40,7 +40,6 @@
     var zoomSettings = {
         scale: 1,
         zoom: true,
-        infiniteZoom: true,
         actualSize: true,
         showZoomInOutIcons: false,
         actualSizeIcons: {
@@ -364,10 +363,6 @@
          */
         Zoom.prototype.setActualSize = function (index, event) {
             var _this = this;
-            if (this.zoomInProgress) {
-                return;
-            }
-            this.zoomInProgress = true;
             var currentItem = this.core.galleryItems[this.core.index];
             this.resetImageTranslate(index);
             setTimeout(function () {
@@ -387,13 +382,10 @@
                 _this.setPageCords(event);
                 _this.beginZoom(_this.scale);
                 _this.zoomImage(_this.scale, _this.scale - prevScale, true, true);
+                setTimeout(function () {
+                    _this.core.outer.removeClass('lg-grabbing').addClass('lg-grab');
+                }, 10);
             }, 50);
-            setTimeout(function () {
-                _this.core.outer.removeClass('lg-grabbing').addClass('lg-grab');
-            }, 60);
-            setTimeout(function () {
-                _this.zoomInProgress = false;
-            }, ZOOM_TRANSITION_DURATION + 110);
         };
         Zoom.prototype.getNaturalWidth = function (index) {
             var $image = this.core.getSlideItem(index).find('.lg-image').first();
@@ -540,7 +532,7 @@
                         scale = 1;
                     }
                     _this.beginZoom(scale);
-                    _this.zoomImage(scale, -_this.settings.scale, true, !_this.settings.infiniteZoom);
+                    _this.zoomImage(scale, -_this.settings.scale, true, true);
                 }, timeout);
             });
             this.core.getElementById('lg-zoom-in').on('click.lg', function () {
@@ -564,7 +556,6 @@
                 var prevIndex = event.detail.prevIndex;
                 _this.scale = 1;
                 _this.positionChanged = false;
-                _this.zoomInProgress = false;
                 _this.resetZoom(prevIndex);
                 _this.resetImageTranslate(prevIndex);
                 if (_this.isImageSlide(_this.core.index)) {
@@ -578,7 +569,6 @@
             // Store the zoomable timeout value just to clear it while closing
             this.zoomableTimeout = false;
             this.positionChanged = false;
-            this.zoomInProgress = false;
         };
         Zoom.prototype.zoomIn = function () {
             // Allow zoom only on image
@@ -586,11 +576,9 @@
                 return;
             }
             var scale = this.scale + this.settings.scale;
-            if (!this.settings.infiniteZoom) {
-                scale = this.getScale(scale);
-            }
+            scale = this.getScale(scale);
             this.beginZoom(scale);
-            this.zoomImage(scale, Math.min(this.settings.scale, scale - this.scale), true, !this.settings.infiniteZoom);
+            this.zoomImage(scale, Math.min(this.settings.scale, scale - this.scale), true, true);
         };
         // Reset zoom effect
         Zoom.prototype.resetZoom = function (index) {
@@ -963,7 +951,6 @@
         };
         Zoom.prototype.closeGallery = function () {
             this.resetZoom();
-            this.zoomInProgress = false;
         };
         Zoom.prototype.destroy = function () {
             // Unbind all events added by lightGallery zoom plugin

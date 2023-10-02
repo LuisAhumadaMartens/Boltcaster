@@ -21,7 +21,6 @@ export interface LightGalleryCoreStrings {
     nextSlide: string;
     download: string;
     playVideo: string;
-    mediaLoadingFailed: string;
 }
 export declare type LightGalleryAllSettings = LightGalleryCoreSettings & ZoomSettings & ThumbnailsSettings & VideoSettings & AutoplaySettings & CommentSettings & FullscreenSettings & HashSettings & PagerSettings & RotateSettings & ShareSettings;
 export declare type LightGallerySettings = Partial<LightGalleryAllSettings>;
@@ -411,11 +410,10 @@ export interface LightGalleryCoreSettings {
      */
     mobileSettings: Partial<MobileSettings>;
     /**
-     * Customize string.
+     * Aria label strings for lightGallery core modules.
      * @description This can be useful if you want to localize the lightGallery strings to other languages.
      * Use your own service to translate the strings and pass it via settings.strings
      * You can find dedicated strings option for all lightGallery modules in their respective documentation.
-     * Note - You need to provide values for all the strings. For example, even if you just want to change the closeGallery string, you need to provide all the other strings as well.
      */
     strings: LightGalleryCoreStrings;
     plugins: (new (instance: LightGallery, $LG: LgQuery) => any)[];
