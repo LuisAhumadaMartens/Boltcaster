@@ -30,18 +30,18 @@ function washedColor(hexcode) {
     const threshold = 128;
 
     if (brightness < threshold) {
-        // Color oscuro, hazlo claro un 20%
+        // Darker by 20%
         newRed = Math.min(Math.round(red + threshold * 0.2), 255);
         newGreen = Math.min(Math.round(green + threshold * 0.2), 255);
         newBlue = Math.min(Math.round(blue + threshold * 0.2), 255);
     } else {
-        // Color claro, hazlo oscuro un 20%
+        // Lighter by 20%
         newRed = Math.max(Math.round(red - threshold * 0.2), 0);
         newGreen = Math.max(Math.round(green - threshold * 0.2), 0);
         newBlue = Math.max(Math.round(blue - threshold * 0.2), 0);
     }
 
-    // Convertir los nuevos valores RGB a formato hexadecimal
+    // Convert RGB to Hex
     const newHex = rgbToHex(newRed, newGreen, newBlue);
     return newHex;
 }
@@ -59,18 +59,18 @@ function intenseColor(hexcode) {
     const threshold = 128;
 
     if (brightness < threshold) {
-        // Color oscuro, hazlo oscuro un 20%
+        // Darker by 20%
         newRed = Math.max(Math.round(red - threshold * 0.2), 0);
         newGreen = Math.max(Math.round(green - threshold * 0.2), 0);
         newBlue = Math.max(Math.round(blue - threshold * 0.2), 0);
     } else {
-        // Color claro, hazlo claro un 20%
+        // Lighter by 20%
         newRed = Math.min(Math.round(red + threshold * 0.2), 255);
         newGreen = Math.min(Math.round(green + threshold * 0.2), 255);
         newBlue = Math.min(Math.round(blue + threshold * 0.2), 255);
     }
 
-    // Convertir los nuevos valores RGB a formato hexadecimal
+    // Convert RGB to Hex
     const newHex = rgbToHex(newRed, newGreen, newBlue);
     return newHex;
 }
@@ -81,6 +81,9 @@ $(function () {
     // Retrieve the background color value from the data attribute
     const customBackgroundColor = $('#custom-background-color').data('background-color');
     const customBodyColor = $('#custom-body-color').data('body-color');
+
+    console.log('Custom background color:', customBackgroundColor);
+    console.log('Custom body color:', customBodyColor);
 
     // Calculate the washed color using the function
     const backgroundWashedColorValue = washedColor(customBackgroundColor);

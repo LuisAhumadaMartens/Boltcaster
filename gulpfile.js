@@ -86,10 +86,8 @@ function zipper(done) {
 const hbsWatcher = () => watch(['*.hbs', 'partials/**/*.hbs'], hbs);
 const cssWatcher = () => watch('assets/css/**/*.css', css);
 const jsWatcher = () => watch('assets/js/**/*.js', js);
-const imagesWatcher = () => watch('assets/img/**/*', images);
-
-const watcher = parallel(hbsWatcher, cssWatcher, jsWatcher, imagesWatcher);
-const build = series(parallel(css, js, images));
+const watcher = parallel(hbsWatcher, cssWatcher, jsWatcher);
+const build = series(css, js);
 
 exports.build = build;
 exports.zip = series(build, zipper);

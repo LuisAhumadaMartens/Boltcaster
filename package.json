@@ -1,7 +1,7 @@
 {
 	"name": "boltcaster",
 	"description": "A portfolio and blog theme  made by Luis Ahumada.",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"license": "UNLICENSED",
 	"author": {
 		"name": "Luis Ahumada",
@@ -132,6 +132,7 @@
 	},
 	"dependencies": {
 		"@lottiefiles/lottie-player": "^1.7.1",
+		"jquery": "^3.6.0",
 		"autoprefixer": "^10.4.16",
 		"bootstrap": "^5.2.3",
 		"boxicons": "^2.1.4",
