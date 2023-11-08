@@ -56,8 +56,8 @@
   --si-body-font-size: 1rem;
   --si-body-font-weight: 400;
   --si-body-line-height: 1.6;
-  --si-body-color: #565973;
-  --si-body-bg: #fff;
+  --si-body-color: var(--regular-font-color);
+  --si-body-bg: var(--background-color);
   --si-border-width: 1px;
   --si-border-style: solid;
   --si-border-color: #e2e5f1;

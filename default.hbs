@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{@site.locale}}" class="dark-mode">
+<html lang="{{@site.locale}}">
 <head>
     <meta charset="utf-8">
     <title>{{meta_title}}</title>
@@ -42,6 +42,11 @@
 
     <!-- Page loading styles -->
     <style>
+        :root {
+            --background-color: {{@custom.background_color}};
+            --regular-font-color: {{@custom.body_color}};
+            --heading-font-color: {{@custom.heading_color}};
+        }
         .page-loading {
             position: fixed;
             top: 0;
@@ -52,13 +57,10 @@
             height: 100%;
             -webkit-transition: all .4s .2s ease-in-out;
             transition: all .4s .2s ease-in-out;
-            background-color: #fff;
+            background-color: var(--background-color);
             opacity: 0;
             visibility: hidden;
             z-index: 9999;
-        }
-        .dark-mode .page-loading {
-            background-color: #0b0f19;
         }
         .page-loading.active {
             opacity: 1;
@@ -83,11 +85,7 @@
             display: block;
             font-size: 1rem;
             font-weight: normal;
-            color: #9397ad;
-        }
-        .dark-mode .page-loading-inner > span {
-            color: #fff;
-            opacity: .6;
+            color: var(--regular-font-color);
         }
         .page-spinner {
             display: inline-block;
@@ -95,15 +93,11 @@
             height: 2.75rem;
             margin-bottom: .75rem;
             vertical-align: text-bottom;
-            border: .15em solid #b4b7c9;
+            border: .15em solid var(--regular-font-color);
             border-right-color: transparent;
             border-radius: 50%;
             -webkit-animation: spinner .75s linear infinite;
             animation: spinner .75s linear infinite;
-        }
-        .dark-mode .page-spinner {
-            border-color: rgba(255,255,255,.4);
-            border-right-color: transparent;
         }
         @-webkit-keyframes spinner {
             100% {
@@ -116,12 +110,6 @@
                 -webkit-transform: rotate(360deg);
                 transform: rotate(360deg);
             }
-        }
-
-        :root {
-            --background-color: {{@custom.background_color}};
-            --regular-font-color: {{@custom.body_color}};
-            --heading-font-color: {{@custom.heading_color}};
         }
     </style>
 
