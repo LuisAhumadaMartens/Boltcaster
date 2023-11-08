@@ -79,7 +79,7 @@ $(function () {
     'use strict';
 
     // Retrieve the background color value from the data attribute
-    const ghostAccentColor = $('#ghost-accent-color').data('ghost-accent-color');
+    const ghostAccentColor = $('#parse-ghost-accent-color').data('accent_color');
     const customBackgroundColor = $('#custom-background-color').data('background-color');
     const customBodyColor = $('#custom-body-color').data('body-color');
 
