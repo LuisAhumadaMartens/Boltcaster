@@ -62,10 +62,6 @@
 				"type": "color",
 				"default": "#121519"
 			},
-			"second_accent_color": {
-				"type": "color",
-				"default": "#E90C64"
-			},
 			"body_font": {
 				"type": "select",
 				"options": [

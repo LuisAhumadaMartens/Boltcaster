@@ -79,19 +79,21 @@ $(function () {
     'use strict';
 
     // Retrieve the background color value from the data attribute
+    const ghostAccentColor = $('#ghost-accent-color').data('ghost-accent-color');
     const customBackgroundColor = $('#custom-background-color').data('background-color');
     const customBodyColor = $('#custom-body-color').data('body-color');
 
-    console.log('Custom background color:', customBackgroundColor);
-    console.log('Custom body color:', customBodyColor);
-
     // Calculate the washed color using the function
+    const ghostAccentWashedColor = washedColor(ghostAccentColor);
+    const ghostAccentIntenseColor = intenseColor(ghostAccentColor);
     const backgroundWashedColorValue = washedColor(customBackgroundColor);
     const backgroundIntenseColorValue = intenseColor(customBackgroundColor);
     const regularWashedColorValue = washedColor(customBodyColor);
     const regularIntenseColorValue = intenseColor(customBodyColor);
 
     // Declarar variables CSS con los valores de washed-color e intense-color
+    document.documentElement.style.setProperty("--ghost-accent-washed-color", ghostAccentWashedColor);
+    document.documentElement.style.setProperty("--ghost-accent-intense-color", ghostAccentIntenseColor);
     document.documentElement.style.setProperty("--background-washed-color", backgroundWashedColorValue);
     document.documentElement.style.setProperty("--background-intense-color", backgroundIntenseColorValue);
     document.documentElement.style.setProperty("--regular-washed-color", regularWashedColorValue);
